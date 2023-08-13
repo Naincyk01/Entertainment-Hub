@@ -30,7 +30,7 @@ const Home = () => {
             >
               <div className="posterImage">
                 <img
-                  src={`https://image.tmdb.org/t/p/original/${
+                  src={`https://image.tmdb.org/t/p/original${
                     movie && movie.backdrop_path
                   }`}
                 />
@@ -39,13 +39,16 @@ const Home = () => {
                 <div className="posterImage_title">
                   {movie ? movie.original_title : ""}
                 </div>
-                <div className="posterImage_runtime">{movie ? movie.released_date : ""}
-                <span className="posterImage_rating">
-                  {movie ? movie.vote_average : ""}
-                  <i className="fas fa-star"/>{" "}
-                </span>
+                <div className="posterImage_runtime">
+                  {movie ? movie.release_date : ""}
+                  <span className="posterImage_rating">
+                    {movie ? movie.vote_average : ""}
+                    <i className="fas fa-star" />{" "}
+                  </span>
                 </div>
-                <div className="posterImage_description">{movie ? movie.overview : ""}</div>
+                <div className="posterImage_description">
+                  {movie ? movie.overview : ""}
+                </div>
               </div>
             </Link>
           ))}
