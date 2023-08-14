@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "./card.css";
 import { Link } from "react-router-dom";
+
 const Cards = ({ movie }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,7 +22,7 @@ const Cards = ({ movie }) => {
         </div>
       ) : (
         <Link
-          to={`movie/${movie.id}`}
+          to={`/movie/${movie.id}`}
           style={{ textDecoration: "none", color: "white" }}
         >
           <div className="cards">
@@ -37,13 +38,13 @@ const Cards = ({ movie }) => {
               </div>
               <div className="cards_runtime">
                 {movie ? movie.release_date : ""}
-                <span className="card-rating">
+                <span className="cards_rating">
                   {movie ? movie.vote_average : ""}
                   <i className="fas fa-star" />{" "}
                 </span>
               </div>
               <div className="cards_description">
-                {movie ? movie.overview.slice(0,118)+"..." : ""}
+                {movie ? movie.overview.slice(0, 118) + "........." : ""}
               </div>
             </div>
           </div>
@@ -53,6 +54,4 @@ const Cards = ({ movie }) => {
   );
 };
 
-
-
-export default Cards
+export default Cards;
