@@ -3,6 +3,7 @@ import "./home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
+import MovieList from "../../components/movieList/movieList";
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
       .then((data) => setPopularMovies(data.results));
   }, []);
   return (
-    <>
+    <div>
       <div className="poster">
         <Carousel
           showThumbs={false}
@@ -53,8 +54,9 @@ const Home = () => {
             </Link>
           ))}
         </Carousel>
+        <MovieList/>
       </div>
-    </>
+    </div>
   );
 };
 

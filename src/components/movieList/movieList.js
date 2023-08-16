@@ -20,8 +20,9 @@ const MovieList = ()=>{
             .then((res) => res.json())
             .then((data) => setMovieList(data.results));
     }
+
     return(
-        <div className="movie_list">
+        <div className={`movie_list`}>
             <h2 className="list_title">{(type?type:"POPULAR").toUpperCase()}</h2>
             <div className="list_cards">
                 {
