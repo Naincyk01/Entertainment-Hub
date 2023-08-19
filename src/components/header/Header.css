@@ -4,24 +4,31 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-}
 
-.headerLeft{
-    display: flex;
-    align-items: center;
+}
+.headerRight{
+font-size: 28px;
+/* border: 2px solid white; */
+font-weight: bold;
 }
 
 a > span{
     margin: 0 30px;
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
     cursor: pointer;
     color: white;
+    
 }
 a>span:hover{
-    color: red;
+    color: rgb(197, 194, 194);
 }
 
 .header-icon{
     width: 80px;
     cursor: pointer;
+    border: 2px solid rgb(74, 77, 29);
+    border-radius:10px;
+}
+.header-icon:hover{
+    border: 3px solid gold;
 }
