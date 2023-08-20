@@ -1,20 +1,20 @@
-.header{
+/* .header{
     margin: 0 2.5rem;
     padding: 0.5rem 0;
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 
-}
-.headerRight{
+}*/
+/* .headerRight{
 font-size: 28px;
-/* border: 2px solid white; */
+border: 2px solid white;
 font-weight: bold;
-}
+} */
 
-a > span{
+/* a > span{
     margin: 0 30px;
-    /* font-size: 1.3rem; */
+    font-size: 1.3rem;
     cursor: pointer;
     color: white;
     
@@ -31,4 +31,4 @@ a>span:hover{
 }
 .header-icon:hover{
     border: 3px solid gold;
-}
+} */

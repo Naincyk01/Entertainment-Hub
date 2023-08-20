@@ -6,7 +6,7 @@ import MovieList from "./components/movieList/movieList";
 import Movie from "./pages/movieDetail/movieDetail";
 function App() {
   return (
-    <div className="App">
+    <div className= " text-white font-sans bg-black">
       <Router>
        <Header/>
         <Routes>
