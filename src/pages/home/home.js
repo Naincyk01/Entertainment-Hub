@@ -14,9 +14,10 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setPopularMovies(data.results));
   }, []);
+
+
   return (
-    <div>
-      <div className="poster">
+      <div className="poster flex flex-col gap-y-16">
         <Carousel
           showThumbs={false}
           autoPlay={true}
@@ -28,6 +29,8 @@ const Home = () => {
             <Link
               style={{ textDecoration: "none", color: "white" }}
               to={`/movie/${movie.id}`}
+              key={movie.id}
+
             >
               <div className="posterImage">
                 <img
@@ -55,8 +58,8 @@ const Home = () => {
           ))}
         </Carousel>
         <MovieList/>
+        
       </div>
-    </div>
   );
 };
 
