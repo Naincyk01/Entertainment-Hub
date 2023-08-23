@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="flex m-2 p-2 justify-center h-12">
-      <div className=" flex justify-between items-center w-11/12 ">
+      <div className="flex justify-between items-center w-11/12 ">
         <div>
           <Link to="/">
             <img

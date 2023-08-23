@@ -29,11 +29,11 @@ const MovieList = () => {
 
   return (
     <div
-      className={`movie_list  flex flex-col items-center justify-center gap-y-8`}
+      className={`flex flex-col items-center justify-center gap-y-8`}
     >
       {/* <h2 className="list_title">{(type?type:"POPULAR").toUpperCase()}</h2> */}
-      <div className="font-bold capitalize text-3xl">Popular</div>
-      <div className="flex flex-wrap justify-center">
+      <div className="font-bold capitalize text-3xl">{(type?type:"POPULAR")}</div>
+      <div className=" gap-x-6 gap-y-2 flex flex-wrap justify-center">
         {movieList.map((movie) => (
           <Cards movie={movie}  key={movie.id} />
         ))}

@@ -7,9 +7,6 @@ const Cards = ({ movie}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [image, setImage] = useState();
 
-
-  console.log(image);
-
   async function imageFetch() {
     const data = await fetch(
       "https:/image.tmdb.org/t/p/original" + movie.poster_path
@@ -24,18 +21,6 @@ const Cards = ({ movie}) => {
 
   useEffect(() => {
     imageFetch()
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 3000);
-
-    // setTimeout(() => {
-    //   // setVisibility('visible')
-    //   console.log('apple')
-    // }, 2000);
-
-    // return () => {
-    // }
-
   }, []);
 
   return (
@@ -49,7 +34,7 @@ const Cards = ({ movie}) => {
         >
           <div className="bg-gray-700 relative  overflow-hidden h-[22rem] w-60 z-0 rounded-lg cursor-pointer border border-[#636363] m-[12px] transition-transform hover:scale-125 hover:z-[1000] hover:shadow-2xl">
             <img
-              className={` w-60 h-[22rem]  `}
+              className={`w-60 h-[22rem]`}
               // src={`https://image.tmdb.org/t/p/original${
               //   movie ? movie.poster_path : ""
               // }`}
