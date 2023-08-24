@@ -1,10 +1,21 @@
-
 import React,{ useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-//import { Carousel } from "react-responsive-carousel";
+//  import Btnslider from "./Btnslider";
+import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import { BsFillArrowRightSquareFill } from "react-icons/bs";
+
 
 const Imageslider = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [slideIndex,setSlideIndex] = useState(0);
+
+
+  const nextSlide=() =>{
+      setSlideIndex(slideIndex===1)
+  }
+  const preSlide=() =>{
+  setSlideIndex(slideIndex-1)
+  }
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=e3dafb33dc59e9998e6349775beab18d&language=en-US"
@@ -14,21 +25,26 @@ const Imageslider = () => {
   }, []);
 
   return (
-    <div className="flex justify-center gap-x-2">
-        {popularMovies.map((movie) => (
+  <>
+      <BsFillArrowLeftSquareFill size={35} onClick={preSlide}/>
+    <div className="flex gap-x-2 overflow-hidden" >
+        {
+        popularMovies.map((movie ) => (
           <Link
             style={{ textDecoration: "none", color: "white" }}
             to={`/movie/${movie.id}`}
             key={movie.id}
           >
-            <div className="h-[59px] w-[60px] border-2 border-yellow-100">
-              <img className="h-[55px] w-[60px]"
+            
+            <div className=" border-4 border-green-400">
+            <div className="h-[600px] w-[1255px] border-2 border-yellow-100">
+              <img className="w-full h-full"
                 src={`https://image.tmdb.org/t/p/original${
                   movie && movie.backdrop_path
                 }`}
-              />
+                />
             </div>
-            {/* <div className="posterImage_overlay">
+             <div className="posterImage_overlay">
               <div className="posterImage_title">
                 {movie ? movie.original_title : ""}
               </div>
@@ -42,10 +58,17 @@ const Imageslider = () => {
               <div className="posterImage_description">
                 {movie ? movie.overview : ""}
               </div>
-            </div> */}
+            </div> 
+          </div>
            </Link>
-        ))}
+        ))} 
     </div>
+    <BsFillArrowRightSquareFill size={35} onClick={nextSlide}/>
+     {/* <Btnslider moveSlide={nextSlide} direction={"next"}/>
+    <Btnslider moveSlide={preSlide} direction={"prev"}/>  */}
+        </> 
+ 
+       
   );
 };
 
