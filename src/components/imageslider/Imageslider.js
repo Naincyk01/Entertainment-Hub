@@ -7,6 +7,15 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const Imageslider = () => {
   const [popularMovies, setPopularMovies] = useState([]);
+  
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key=e3dafb33dc59e9998e6349775beab18d&language=en-US"
+    )
+      .then((res) => res.json())
+      .then((data) => setPopularMovies(data.results));
+  }, []);
+
   const [slideIndex,setSlideIndex] = useState(0);
 
 
@@ -16,13 +25,6 @@ const Imageslider = () => {
   const preSlide=() =>{
   setSlideIndex(slideIndex-1)
   }
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=e3dafb33dc59e9998e6349775beab18d&language=en-US"
-    )
-      .then((res) => res.json())
-      .then((data) => setPopularMovies(data.results));
-  }, []);
 
   return (
   <>
