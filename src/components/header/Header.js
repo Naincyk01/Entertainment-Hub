@@ -8,7 +8,7 @@ const Header = () => {
       <div className="flex justify-between items-center w-11/12 ">
         <div>
           <Link to="/">
-            <img
+            <img alt=""
               className="w-18 h-10 cursor-pointer hover:scale-95"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png"
             />
